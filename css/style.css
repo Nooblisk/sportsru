@@ -14,8 +14,15 @@
     border-right: 1px solid #d8d8d8;
 }
 .left-text {
-    padding-left: 15px;
+    padding-left: 10px;
     text-align: left !important;
+}
+/*.right-text {*/
+    /*text-align: right;*/
+    /*padding-right: 5px;*/
+/*}*/
+td, th {
+    padding-right: 5px;
 }
 a {
     text-decoration: none;
@@ -65,3 +72,4 @@ th.team {
 .color-grey{
     background-color: #f9f9f7;
 }
+
