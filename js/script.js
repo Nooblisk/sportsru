@@ -274,7 +274,7 @@ for (var i=0; i<obj.length; i++){
     var color = colorClass(obj[i].color);
     var place = "<td class='left-text"+color+"'>"+obj[i].place+"</td>";
     var href = "<a href='"+obj[i].tag_url+"'>"+obj[i].name+"</a>";
-    var name = "<td class='left-text command'>"+href+"</td>";
+    var name = "<td class='left-text team'>"+href+"</td>";
     var matches = "<td>"+obj[i].matches+"</td>";
     var win = "<td class='class2'>"+obj[i].win+"</td>";
     var draw = "<td class='class2'>"+obj[i].draw+"</td>";
