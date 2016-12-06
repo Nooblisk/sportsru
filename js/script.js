@@ -13,11 +13,15 @@ function colorClass(colorNumber){
     if (colorNumber == 1 || colorNumber == 2 || colorNumber ==4) return " color"+colorNumber;
     else return "";
 }
-
+//по идее это будет объект, который сопоставляет название стран с их сокращением, чтобы использовать для выбора флага в дальнейшем.
+var objFlags = {
+  "Италия" : "it",
+};
 for (var i=0; i<arraySortPlace.length; i++){
+    var country = arraySortPlace[i].flag_country;
     var color = colorClass(arraySortPlace[i].color);
     var place = "<td class='left-text"+color+"'>"+arraySortPlace[i].place+"</td>";
-    var flag = "<i class='flag flag-it' title='Италия'/>";
+    var flag = "<i class='flag flag-"+ objFlags[country] +"' title='"+ country +"'/>";
     var href = "<a href='"+arraySortPlace[i].tag_url+"' title='"+ arraySortPlace[i].name +"'>"+arraySortPlace[i].name+"</a>";
     var name = "<td class='left-text team'>"+ flag +" "+ href + "</td>";
     var matches = "<td>"+arraySortPlace[i].matches+"</td>";
