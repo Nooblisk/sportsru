@@ -1,10 +1,10 @@
 @media screen and (min-width : 480px) and (max-width : 568px)  {
-.class1 {
+.hide-first {
     display: none;
 }
 }
 @media only screen and (max-width : 480px){
-    .class1, .class2{
+    .hide-first, .hide-second{
         display: none;
     }
 }
@@ -52,6 +52,7 @@ td, th{
 th {
     color: #006496;
     cursor: pointer;
+    text-align: right;
 }
 th.team {
     color: black;

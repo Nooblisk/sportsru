@@ -9,6 +9,8 @@
 <body>
 
 <script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/handlebars.min-latest.js"></script>
+
 
 <div>
     <table id="table" cellspacing="0">
@@ -23,20 +25,38 @@
             <col width="50">
             <col width="50">
         </colgroup>
+        <thead>
         <tr>
-            <th></th>
-            <th class="left-text team">Команда</th>
-            <th title="Матчи">М</th>
-            <th class='class2' title="Выигрыши">В</th>
-            <th class='class2' title="Ничьи">Н</th>
-            <th class='class2' title="Проигрыши">П</th>
-            <th class='class1' title="Забитые голы">Заб</th>
-            <th class='class1' title="Пропущенные голы">Проп</th>
-            <th title="Очки в турнире">О</th>
+            <th class="th-sortable" data-type="place"></th>
+            <th class="left-text team th-sortable" data-type="name">Команда</th>
+            <th class="th-sortable" title="Матчи" data-type="matches">М</th>
+            <th class='hide-second th-sortable' title="Выигрыши" data-type="win">В</th>
+            <th class='hide-second th-sortable' title="Ничьи" data-type="draw">Н</th>
+            <th class='hide-second th-sortable' title="Проигрыши" data-type="lose">П</th>
+            <th class='hide-first th-sortable' title="Забитые голы" data-type="goals">Заб</th>
+            <th class='hide-first th-sortable' title="Пропущенные голы" data-type="conceded_goals">Проп</th>
+            <th class="th-sortable" title="Очки в турнире" data-type="score">О</th>
         </tr>
+        </thead>
+        <tbody id="bodyTable">
+
+        </tbody>
     </table>
     <p class="description"><b>М</b>&nbsp;&#x2012;&nbsp;матчи, <b>В</b>&nbsp;&#x2012;&nbsp;выигрыши, <b>Н</b>&nbsp;&#x2012;&nbsp;ничьи, <b>П</b>&nbsp;&#x2012;&nbsp;проигрыши, <b>Заб</b>&nbsp;&#x2012;&nbsp;забитые голы, <b>Проп</b>&nbsp;&#x2012;&nbsp;пропущенные голы, <b>О</b>&nbsp;&#x2012;&nbsp;очки в турнире</p>
 </div>
+<script id="templateRow" type="text/x-handlebars-template">
+    <tr>
+        <td class="left-text color{{color}}">{{place}}</td>
+        <td class="left-text team"><i class="flag" title={{flag_country}}/> <a href={{tag_url}} title={{name}}>{{name}}</a></td>
+        <td>{{matches}}</td>
+        <td class="hide-second">{{win}}</td>
+        <td class="hide-second">{{draw}}</td>
+        <td class="hide-second">{{lose}}</td>
+        <td class="hide-first">{{goals}}</td>
+        <td class="hide-first">{{conceded_goals}}</td>
+        <td class="color-grey">{{score}}</td>
+    </tr>
+</script>
 <script src="js/script.js"></script>
 </body>
 </html>
